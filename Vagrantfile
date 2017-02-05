@@ -29,6 +29,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "10.6.6.10"
 
   # SSH
+  # https://www.vagrantup.com/docs/vagrantfile/ssh_settings.html
   config.ssh.forward_agent = true
 
   # Create a public network, which generally matched to bridged network.
@@ -67,6 +68,11 @@ Vagrant.configure("2") do |config|
 
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
+    # https://github.com/fgrehm/vagrant-cachier/issues/175
+    config.cache.synced_folder_opts = {
+      owner: "_apt",
+      group: "_apt"
+    }
   end
 
   # Enable provisioning with a shell script. Additional provisioners such as
