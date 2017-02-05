@@ -80,6 +80,7 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install -y mc
+    apt-get install -y mc docker.io
+    usermod -aG docker ubuntu
   SHELL
 end
