@@ -47,7 +47,7 @@ Welcome to your Vagrant-built virtual machine.
 
 ---
 
-# Atlas - dicovery boxes
+# Atlas - discovery boxes
 
 ## [https://atlas.hashicorp.com/boxes/search](https://atlas.hashicorp.com/boxes/search)
 
